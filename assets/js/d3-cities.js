@@ -25,52 +25,52 @@
     {
       "Stadt": "München",
       "Einwohnerzahl": 1450381,
-      "Fläche": "310,4 km²"
+      "Fläche": "310.4 km²"
     },
     {
       "Stadt": "Köln",
       "Einwohnerzahl": 1060582,
-      "Fläche": "405,2 km²"
+      "Fläche": "405.2 km²"
     },
     {
       "Stadt": "Frankfurt am Main",
       "Einwohnerzahl": 732688,
-      "Fläche": "248,3 km²"
+      "Fläche": "248.3 km²"
     },
     {
       "Stadt": "Stuttgart",
       "Einwohnerzahl": 623738,
-      "Fläche": "207,4 km²"
+      "Fläche": "207.4 km²"
     },
     {
       "Stadt": "Düsseldorf",
       "Einwohnerzahl": 612178,
-      "Fläche": "217,4 km²"
+      "Fläche": "217.4 km²"
     },
     {
       "Stadt": "Dortmund",
       "Einwohnerzahl": 586181,
-      "Fläche": "280,4 km²"
+      "Fläche": "280.4 km²"
     },
     {
       "Stadt": "Essen",
       "Einwohnerzahl": 582624,
-      "Fläche": "210,3 km²"
+      "Fläche": "210.3 km²"
     },
     {
       "Stadt": "Leipzig",
       "Einwohnerzahl": 560472,
-      "Fläche": "297,6 km²"
+      "Fläche": "297.6 km²"
     },
     {
       "Stadt": "Bremen",
       "Einwohnerzahl": 557464,
-      "Fläche": "326,7 km²"
+      "Fläche": "326.7 km²"
     },
     {
       "Stadt": "Dresden",
       "Einwohnerzahl": 543825,
-      "Fläche": "328,8 km²"
+      "Fläche": "328.8 km²"
     },
     {
       "Stadt": "Hannover",
@@ -80,70 +80,63 @@
     {
       "Stadt": "Nürnberg",
       "Einwohnerzahl": 509975,
-      "Fläche": "186,5 km²"
+      "Fläche": "186.5 km²"
     },
     {
       "Stadt": "Duisburg",
       "Einwohnerzahl": 491231,
-      "Fläche": "232,8 km²"
+      "Fläche": "232.8 km²"
     },
     {
       "Stadt": "Bochum",
       "Einwohnerzahl": 364742,
-      "Fläche": "145,4 km²"
+      "Fläche": "145.4 km²"
     },
     {
       "Stadt": "Wuppertal",
       "Einwohnerzahl": 350046,
-      "Fläche": "168,4 km²"
+      "Fläche": "168.4 km²"
     },
     {
       "Stadt": "Bielefeld",
       "Einwohnerzahl": 333090,
-      "Fläche": "257,8 km²"
+      "Fläche": "257.,8 km²"
     },
     {
       "Stadt": "Bonn",
       "Einwohnerzahl": 318809,
-      "Fläche": "141,1 km²"
+      "Fläche": "141.1 km²"
     },
     {
       "Stadt": "Münster",
       "Einwohnerzahl": 310039,
-      "Fläche": "302,9 km²"
+      "Fläche": "302.9 km²"
     }
   ];
 
   // dataset = [
-  //   ["Berlin",  3.520.031, "891 km²"],
-  //   ["Hamburg", 1.787.408, "755 km²"],
-  //   ["München", 1.450.381, "310,4 km²"],
-  //   ["Köln",    1.060.582, "405,2 km²"]
+  //   ["Berlin", 3520031, "891 km²"],
+  //   ["Hamburg", 1787408, "755 km²"],
+  //   ["München", 1450381, "310.4 km²"],
+  //   ["Köln", 1060582, "405.2 km²"],
+  //   ["Frankfurt am Main", 732688, "248.3 km²"],
+  //   ["Stuttgart", 623738, "207.4 km²"],
+  //   ["Düsseldorf", 612178, "217.4 km²"],
+  //   ["Dortmund", 586181, "280.4 km²"],
+  //   ["Essen", 582624, "210.3 km²"],
+  //   ["Leipzig", 560472, "297.6 km²"],
+  //   ["Bremen", 557464, "326.7 km²"],
+  //   ["Dresden", 543825, "328.8 km²"],
+  //   ["Hannover", 532163, "204 km²"],
+  //   ["Nürnberg", 509975, "186.5 km²"],
+  //   ["Duisburg", 491231, "232.8 km²"],
+  //   ["Bochum", 364742, "145.4 km²"],
+  //   ["Wuppertal", 350046, "168.4 km²"],
+  //   ["Bielefeld", 333090, "257.8 km²"],
+  //   ["Bonn", 318809, "141.1 km²"],
+  //   ["Münster", 310039, "302.9 km²"]
   // ];
 
-  /*
-    Stadt	Einwohnerzahl	Fläche
-    Berlin	3.520.031	891,8 km²
-    Hamburg	1.787.408	755 km²
-    München	1.450.381	310,4 km²
-    Köln	1.060.582	405,2 km²
-    Frankfurt am Main	732.688	248,3 km²
-    Stuttgart	623.738	207,4 km²
-    Düsseldorf	612.178	217,4 km²
-    Dortmund	586.181	280,4 km²
-    Essen	582.624	210,3 km²
-    Leipzig	560.472	297,6 km²
-    Bremen	557.464	326,7 km²
-    Dresden	543.825	328,8 km²
-    Hannover	532.163	204 km²
-    Nürnberg	509.975	186,5 km²
-    Duisburg	491.231	232,8 km²
-    Bochum	364.742	145,4 km²
-    Wuppertal	350.046	168,4 km²
-    Bielefeld	333.090	257,8 km²
-    Bonn	318.809	141,1 km²
-    Münster	310.039	302,9 km²
-    */
   canvas = {
     context: 'main',
     width: 800,
@@ -174,7 +167,7 @@
     },
     yAxis: {
       domain: {
-        from: 100,
+        from: 1000,
         to: 0
       },
       range: {
@@ -233,12 +226,20 @@
       .enter()
       .append('circle')
       .attr('class', 'city')
-      .attr('cx', function (d, i) {
-        let x = d['Einwohnerzahl'];
+      .attr('transform', function (d, i) {
+        let
+          x = d['Einwohnerzahl'],
+          y = d['Fläche'];
+
+        y = parseFloat(y);
+
         x = xScale(x);
-        return x;
+        y = yScale(y);
+
+        return 'translate(' + x + ', ' + y + ') scale(1) rotate(0)';
       })
-      .attr('cy', canvas.height - canvas.padding.bottom)
+      .attr('cx', 0)
+      .attr('cy', 0)
       .attr('r', function (d, i) {
         let
           radius = d['Fläche'] || null;
@@ -253,7 +254,7 @@
   // control
   setCanvas(canvas.context);
   setXAxis();
-  //setYAxis();
+  setYAxis();
 
   drawCitiesAsCircles();
   // - - - - - - - - - -

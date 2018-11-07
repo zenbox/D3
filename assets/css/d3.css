@@ -1,0 +1,44 @@
+/**
+ * Styles for the Tacho Application
+ * @author Michael
+ * @since 2018/11/06
+ * @version 1.0.0
+ */
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i');
+
+html {
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 15px;
+  font-weight: 300;
+}
+
+body>* {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+
+svg {
+  border-width: medium;
+  border-color: lightsteelblue;
+  border-style: solid;
+  box-sizing: border-box;
+}
+
+.axis {}
+
+.axis>path {
+  stroke: gray;
+  stroke-width: 2px;
+  stroke-dasharray: 2px 2px;
+}
+
+.axis .tick line {
+  stroke: gray;
+  stroke-width: 2px;
+}
+
+.axis .tick text {
+  font-family: monospace;
+  fill: gray;
+}

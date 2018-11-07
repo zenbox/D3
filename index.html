@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, inial-scale=1" />
+    <title>A Tacho Application</title>
+    <link rel="stylesheet" href="assets/css/tacho.css" />
+  </head>
+
+  <body>
+
+    <header>
+      <h1>Tacho</h1>
+      <address>Michael, <time>2018/11/06</time></address>
+    </header>
+    <main>
+      <svg width="400" height="400" viewbox="0 0 400 400">
+        <!-- - - - - - - - - - - -->
+        <g id="tacho">
+          <circle id="disk" class="disk" cx="0" cy="0" r="100" transform="translate(200,200) rotate(0)"></circle>
+          <polygon id="needle" class="needle" points="-10,0, 0,80, 10,0" transform="translate(200,200) rotate(0)"></polygon>
+        </g>
+        <!-- - - - - - - - - - - -->
+      </svg>
+    </main>
+    <aside>
+      <p>values ...</p>
+    </aside>
+    <footer>
+      <p>&copy; 2018 Michael</p>
+    </footer>
+    <script src="assets/js/tacho.js" charset="utf-8"></script>
+  </body>
+
+</html>

@@ -31,6 +31,86 @@
       "Stadt": "Köln",
       "Einwohnerzahl": 1060582,
       "Fläche": "405,2 km²"
+    },
+    {
+      "Stadt": "Frankfurt am Main",
+      "Einwohnerzahl": 732688,
+      "Fläche": "248,3 km²"
+    },
+    {
+      "Stadt": "Stuttgart",
+      "Einwohnerzahl": 623738,
+      "Fläche": "207,4 km²"
+    },
+    {
+      "Stadt": "Düsseldorf",
+      "Einwohnerzahl": 612178,
+      "Fläche": "217,4 km²"
+    },
+    {
+      "Stadt": "Dortmund",
+      "Einwohnerzahl": 586181,
+      "Fläche": "280,4 km²"
+    },
+    {
+      "Stadt": "Essen",
+      "Einwohnerzahl": 582624,
+      "Fläche": "210,3 km²"
+    },
+    {
+      "Stadt": "Leipzig",
+      "Einwohnerzahl": 560472,
+      "Fläche": "297,6 km²"
+    },
+    {
+      "Stadt": "Bremen",
+      "Einwohnerzahl": 557464,
+      "Fläche": "326,7 km²"
+    },
+    {
+      "Stadt": "Dresden",
+      "Einwohnerzahl": 543825,
+      "Fläche": "328,8 km²"
+    },
+    {
+      "Stadt": "Hannover",
+      "Einwohnerzahl": 532163,
+      "Fläche": "204 km²"
+    },
+    {
+      "Stadt": "Nürnberg",
+      "Einwohnerzahl": 509975,
+      "Fläche": "186,5 km²"
+    },
+    {
+      "Stadt": "Duisburg",
+      "Einwohnerzahl": 491231,
+      "Fläche": "232,8 km²"
+    },
+    {
+      "Stadt": "Bochum",
+      "Einwohnerzahl": 364742,
+      "Fläche": "145,4 km²"
+    },
+    {
+      "Stadt": "Wuppertal",
+      "Einwohnerzahl": 350046,
+      "Fläche": "168,4 km²"
+    },
+    {
+      "Stadt": "Bielefeld",
+      "Einwohnerzahl": 333090,
+      "Fläche": "257,8 km²"
+    },
+    {
+      "Stadt": "Bonn",
+      "Einwohnerzahl": 318809,
+      "Fläche": "141,1 km²"
+    },
+    {
+      "Stadt": "Münster",
+      "Einwohnerzahl": 310039,
+      "Fläche": "302,9 km²"
     }
   ];
 
@@ -66,7 +146,7 @@
     */
   canvas = {
     context: 'main',
-    width: 400,
+    width: 800,
     height: 400,
     viewbox: {
       x: 0,
@@ -76,7 +156,7 @@
     },
     padding: {
       top: 20,
-      right: 40,
+      right: 100,
       bottom: 40,
       left: 40
     }
@@ -145,10 +225,36 @@
       .call(d3.axisLeft(yScale));
   }
 
+  function drawCitiesAsCircles() {
+    svg.append('g')
+      .attr('class', 'cities')
+      .selectAll()
+      .data(dataset)
+      .enter()
+      .append('circle')
+      .attr('class', 'city')
+      .attr('cx', function (d, i) {
+        let x = d['Einwohnerzahl'];
+        x = xScale(x);
+        return x;
+      })
+      .attr('cy', canvas.height - canvas.padding.bottom)
+      .attr('r', function (d, i) {
+        let
+          radius = d['Fläche'] || null;
+        if (typeof radius === 'string') {
+          radius = parseInt(radius);
+        }
+        radius /= 10;
+        return radius;
+      })
+  }
+
   // control
   setCanvas(canvas.context);
   setXAxis();
-  setYAxis();
+  //setYAxis();
 
+  drawCitiesAsCircles();
   // - - - - - - - - - -
 }())

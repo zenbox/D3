@@ -42,3 +42,9 @@ svg {
   font-family: monospace;
   fill: gray;
 }
+
+.city {
+  fill: transparent;
+  stroke: lightcoral;
+  stroke-width: 2px;
+}

@@ -146,8 +146,8 @@
     viewbox: {
       x: 0,
       y: 0,
-      width: 800,
-      height: 600
+      width: 1600,
+      height: 1200
     },
     padding: {
       top: 20,
@@ -186,7 +186,6 @@
       range: ['hsla(0,0%,60%,0.8)', 'hsla(0,0%,70%,0.8)', 'hsla(0,0%,80%,0.8)']
     }
   };
-
 
   // methods
   function setCanvas(domContext) {
@@ -237,6 +236,7 @@
       .data(dataset)
       .enter();
 
+    // bar rectangle
     group
       .append('rect')
       .attr('class', 'city')
@@ -265,20 +265,26 @@
         return h;
       });
 
+    // bar text label
+    // <text>lorem ipsum ...</text>
     group
       .append('text')
       .text(function (d, i) {
         return d['Stadt'];
       })
-      .style('font-size', '12px')
       .attr('transform', function (d, i) {
         let
-          l = dataset.length,
-          height = canvas.height - canvas.padding.bottom - canvas.padding.top,
-          x = canvas.padding.left + 2,
-          y = canvas.padding.top + (i * height / l) + 12;
+          tx = 0,
+          ty = 0,
+          s = 1,
+          r = 0,
+          length = dataset.length,
+          height = canvas.height - canvas.padding.top - canvas.padding.bottom;
 
-        return 'translate(' + x + ',' + y + ') scale(1) rotate(0)'
+        tx = canvas.padding.left + canvas.options.defaultMargin;
+        ty = canvas.padding.top + (i * height / length) + (height / length / 1.5);
+
+        return 'translate(' + tx + ',' + ty + ') scale(' + s + ') rotate(' + r + ')';
       });
 
   }

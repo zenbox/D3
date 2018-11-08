@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>A D3 Template</title>
+    <link rel="stylesheet" href="assets/css/d3.css">
+  </head>
+
+  <body>
+
+    <header>
+      <h1>D3 Transitions</h1>
+      <style>
+        .box {
+          display : inline-block;
+          width : 50px;
+          height : 20px;
+          margin-right: 0.25rem;
+        }
+        .apple {
+          background-color : red;
+        }
+      .orange {
+        background-color : orange;
+      }
+    .banana {
+      background-color : yellow;
+    }
+    </style>
+    </header>
+    <main class="container">
+      <div class="box apple"></div>
+      <div class="box orange"></div>
+      <div class="box banana"></div>
+    </main>
+    <footer>
+      <address>
+        <p>&copy; 2018, Michael</p>
+      </address>
+    </footer>
+
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script type="text/javascript">
+      !(function() {
+        'use strict';
+        // - - - - - - - - - -
+        // a simple Transitions
+        d3.select('body')
+          .transition()
+          .duration(100)
+          .ease(d3.easeLinear)
+          .style('background-color', 'black');
+
+        d3.selectAll('h1, p')
+          .transition()
+          .duration(100)
+          .ease(d3.easeLinear)
+          .style('color', 'white');
+
+        // defining a transition
+        let t1 = d3.transition()
+          .duration(2500)
+          .ease(d3.easeElasticOut),
+          t2 = d3.transition()
+          .duration(500)
+          .ease(d3.easeElasticOut),
+          t3 = d3.transition()
+          .duration(8000)
+          .ease(d3.easeElasticOut),
+          t4 = d3.transition()
+          .duration(1000)
+          .ease(d3.easeElasticOut);
+
+        // apply the transition
+        d3.selectAll('.apple')
+          .transition(t1)
+          .style('width', '100px')
+          .style('background-color', 'lime');
+
+        d3.selectAll('.orange')
+          .transition(t1)
+          .style('width', '100px')
+          .style('background-color', 'lightcoral');
+
+        // Applying more than one ...
+        d3.selectAll('.banana')
+          .transition(t1)
+          .duration(10000)
+          .style('width', '100px')
+          .style('background-color', 'lime')
+          .transition(t2)
+          .style('width', '300px')
+          .style('background-color', 'green')
+          .transition(t3)
+          .style('width', '10px')
+          .style('background-color', 'orange')
+          .transition(t4)
+          .style('width', '100px')
+          .style('background-color', 'maroon');
+
+
+        // data based transitions
+        var dataset = [500, 70, 200, 1000, 10, 90];
+        d3.select('.container')
+          .selectAll()
+          .data(dataset)
+          .enter()
+          .append('div')
+          .classed('box', true)
+          .classed('apple', true)
+          .transition()
+          .duration(1000)
+          .ease(d3.easeLinear)
+          .style('width', function(d, i) {
+            return d + 'px';
+          })
+          //.attrTween()
+          .styleTween('background-color', function() {
+            return function(t) {
+              let value = 'hsla(' + (parseInt(t * 360)) + ', 80%, 50%, 0.8)';
+              return value;
+            }
+          })
+
+        // - - - - - - - - - -
+      }());
+    </script>
+  </body>
+
+</html>

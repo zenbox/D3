@@ -47,3 +47,17 @@ svg {
   fill: transparent;
   stroke: transparent;
 }
+
+.country {
+  fill: hsla(0, 0%, 50%, 1);
+  stroke: white;
+  stroke-width: 1px;
+  transition-property: all;
+  transition-duration: 250ms;
+  transition-timing-function: ease-in-out;
+  transition-delay: 0;
+}
+
+.country:hover {
+  fill: hsla(180, 50%, 50%, 1);
+}

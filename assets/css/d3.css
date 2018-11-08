@@ -45,6 +45,5 @@ svg {
 
 .city {
   fill: transparent;
-  stroke: lightcoral;
-  stroke-width: 2px;
+  stroke: transparent;
 }

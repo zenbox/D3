@@ -80,8 +80,6 @@
   }
 
   function setXAxis() {
-    setXScale();
-
     svg.append('g')
       .attr('class', 'axis')
       .attr('transform', 'translate(0,' + (canvas.height - canvas.padding.bottom) + ')')
@@ -90,8 +88,6 @@
   }
 
   function setYAxis() {
-    setYScale();
-
     svg.append('g')
       .attr('class', 'axis')
       .attr('transform', 'translate(' + (canvas.padding.left) + ', 0)')
@@ -100,6 +96,10 @@
 
   // control
   setCanvas(canvas.context);
+
+  setXScale();
+  setYScale();
+
   setXAxis();
   setYAxis();
 

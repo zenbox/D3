@@ -72,3 +72,8 @@ svg {
   text-align: center;
   font-size: 2rem;
 }
+
+line {
+  stroke: black;
+  fill: transparent;
+}

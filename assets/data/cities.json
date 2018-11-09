@@ -1,0 +1,141 @@
+[{
+  "Stadt": "Berlin",
+  "Einwohnerzahl": 3520031,
+  "Fläche": "891,8 km²",
+  "Breitengrad": 52.520007,
+  "Längengrad": 13.404954,
+  "GPS Koordinaten": "52° 31' 12.025\" N    13° 24' 17.834\" E"
+}, {
+  "Stadt": "Hamburg",
+  "Einwohnerzahl": 1787408,
+  "Fläche": "755 km²",
+  "Breitengrad": 53.551085,
+  "Längengrad": 9.993682,
+  "GPS Koordinaten": "53° 33'  3.906\" N     9° 59' 37.255\" E"
+}, {
+  "Stadt": "München",
+  "Einwohnerzahl": 1450381,
+  "Fläche": "310,4 km²",
+  "Breitengrad": 48.135125,
+  "Längengrad": 11.581981,
+  "GPS Koordinaten": "48°  8'  6.45\"  N    11° 34' 55.132\" E"
+}, {
+  "Stadt": "Köln",
+  "Einwohnerzahl": 1060582,
+  "Fläche": "405,2 km²",
+  "Breitengrad": 50.937531,
+  "Längengrad": 6.960279,
+  "GPS Koordinaten": "50° 56' 15.112\" N     6° 57' 37.004\" E"
+}, {
+  "Stadt": "Frankfurt am Main",
+  "Einwohnerzahl": 732688,
+  "Fläche": "248,3 km²",
+  "Breitengrad": 50.110922,
+  "Längengrad": 8.682127,
+  "GPS Koordinaten": "50°  6' 39.319\" N     8° 40' 55.657\" E"
+}, {
+  "Stadt": "Stuttgart",
+  "Einwohnerzahl": 623738,
+  "Fläche": "207,4 km²",
+  "Breitengrad": 48.775846,
+  "Längengrad": 9.182932,
+  "GPS Koordinaten": "48° 46' 33.046\" N     9° 10' 58.555\" E"
+}, {
+  "Stadt": "Düsseldorf",
+  "Einwohnerzahl": 612178,
+  "Fläche": "217,4 km²",
+  "Breitengrad": 51.227741,
+  "Längengrad": 6.773456,
+  "GPS Koordinaten": "51° 13' 39.868\" N     6° 46' 24.442\" E"
+}, {
+  "Stadt": "Dortmund",
+  "Einwohnerzahl": 586181,
+  "Fläche": "280,4 km²",
+  "Breitengrad": 51.513587,
+  "Längengrad": 7.465298,
+  "GPS Koordinaten": "51° 30' 48.913\" N     7° 27' 55.073\" E"
+}, {
+  "Stadt": "Essen",
+  "Einwohnerzahl": 582624,
+  "Fläche": "210,3 km²",
+  "Breitengrad": 51.455643,
+  "Längengrad": 7.011555,
+  "GPS Koordinaten": "51° 27' 20.315\" N     7°  0' 41.598\" E"
+}, {
+  "Stadt": "Leipzig",
+  "Einwohnerzahl": 560472,
+  "Fläche": "297,6 km²",
+  "Breitengrad": 51.339695,
+  "Längengrad": 12.373075,
+  "GPS Koordinaten": "51° 20' 22.902\" N    12° 22' 23.07\"  E"
+}, {
+  "Stadt": "Bremen",
+  "Einwohnerzahl": 557464,
+  "Fläche": "326,7 km²",
+  "Breitengrad": 53.079296,
+  "Längengrad": 8.801694,
+  "GPS Koordinaten": "53°  4' 45.466\" N     8° 48'  6.098\" E"
+}, {
+  "Stadt": "Dresden",
+  "Einwohnerzahl": 543825,
+  "Fläche": "328,8 km²",
+  "Breitengrad": 51.050409,
+  "Längengrad": 13.737262,
+  "GPS Koordinaten": "51°  3'  1.472\" N    13° 44' 14.143\" E"
+}, {
+  "Stadt": "Hannover",
+  "Einwohnerzahl": 532163,
+  "Fläche": "204 km²",
+  "Breitengrad": 52.375892,
+  "Längengrad": 9.732010,
+  "GPS Koordinaten": "52° 22' 33.211\" N     9° 43' 55.236\" E"
+}, {
+  "Stadt": "Nürnberg",
+  "Einwohnerzahl": 509975,
+  "Fläche": "186,5 km²",
+  "Breitengrad": 49.452030,
+  "Längengrad": 11.076750,
+  "GPS Koordinaten": "49° 27'  7.308\" N    11°  4' 36.3\"   E"
+} {
+  "Stadt": "Duisburg",
+  "Einwohnerzahl": 491231,
+  "Fläche": "232,8 km²",
+  "Breitengrad": 51.434408,
+  "Längengrad": 6.762329,
+  "GPS Koordinaten": "51° 26'  3.869\" N     6° 45' 44.384\" E"
+}, {
+  "Stadt": "Bochum",
+  "Einwohnerzahl": 364742,
+  "Fläche": "145,4 km²",
+  "Breitengrad": 51.481845,
+  "Längengrad": 7.216236,
+  "GPS Koordinaten": "51° 28' 54.642\" N     7° 12' 58.45\"  E"
+}, {
+  "Stadt": "Wuppertal",
+  "Einwohnerzahl": 350046,
+  "Fläche": "168,4 km²",
+  "Breitengrad": 51.256213,
+  "Längengrad": 7.150764,
+  "GPS Koordinaten": "51° 15' 22.367\" N     7°  9'  2.75\"  E"
+}, {
+  "Stadt": "Bielefeld",
+  "Einwohnerzahl": 333090,
+  "Fläche": "257,8 km²",
+  "Breitengrad": 52.030228,
+  "Längengrad": 8.532471,
+  "GPS Koordinaten": "52°  1' 48.821\" N     8° 31' 56.896\" E"
+}, {
+  "Stadt": "Bonn",
+  "Einwohnerzahl": 318809,
+  "Fläche": "141,1 km²",
+  "Breitengrad": 50.737430,
+  "Längengrad": 7.098207,
+  "GPS Koordinaten": "50° 44' 14.748\" N     7°  5' 53.545\" E"
+}, {
+  "Stadt": "Münster",
+  "Einwohnerzahl": 310039,
+  "Fläche": "302,9 km²",
+  "Breitengrad": 51.960665,
+  "Längengrad": 7.626135,
+  "GPS Koordinaten": "51° 57' 38.394\" N     7° 37' 34.086\" E"
+}]

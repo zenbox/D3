@@ -1,3 +1,9 @@
+/**
+ * A Germany Map
+ * @author Michael
+ * @since 2018/11/09
+ * @version 1.0.0
+ */
 !(function () {
   'use strict';
   // - - - - - - - - - -

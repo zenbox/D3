@@ -197,8 +197,6 @@
               lat = d['Breitengrad'],
               geoCoords = [];
 
-            console.log(typeof projection);
-
             geoCoords = projection([lon, lat]); // lonlat
             x = geoCoords[0];
             y = geoCoords[1];

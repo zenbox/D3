@@ -54,15 +54,18 @@
         let
           nodes = dataset.nodes,
           links = dataset.links,
-          color = d3.scaleOrdinal(d3.schemeCategory10),
+          color = d3.scaleOrdinal(['hsla(0,0%,15%,0.8)', 'hsla(0,0%,25%,0.8)', 'hsla(0,0%,35%,0.8)', 'hsla(0,0%,45%,0.8)']), //d3.schemeCategory10),
           linksBySource = undefined,
           linksCount = undefined,
           forceSimulation = undefined,
           lines = undefined,
-          node = undefined,
+          circles = undefined,
           group = undefined;
 
         // METHODS
+        // - - - - - - - - - -
+        // realtime function
+        // - - - - - - - - - -
         function ticked() {
           if (lines) {
             lines
@@ -79,14 +82,18 @@
                 return d.target.y;
               })
           }
-          if (group) {
-            group
+          if (circles) {
+            circles
               .attr('transform', function (d, i) {
                 return 'translate(' + d.x + ',' + d.y + ')'
               });
           }
         };
+        // - - - - - - - - - -
 
+        // - - - - - - - - - -
+        // dragging functions
+        // - - - - - - - - - -
         function dragstarted(d) {
           if (!d3.event.active) forceSimulation.alphaTarget(0.3)
             .restart();
@@ -104,6 +111,7 @@
           d.fx = null;
           d.fy = null;
         }
+        // - - - - - - - - - -
 
         //CONTROL
         // - - - - - - - - - -
@@ -152,7 +160,7 @@
         lines = svg.append('g')
           .classed('lines', true)
           .selectAll()
-          .data(dataset.links)
+          .data(links)
           .enter()
           .append('line')
           .attr('stroke-width', function (d, i) {
@@ -161,11 +169,12 @@
             return l;
           })
 
-        group = svg.selectAll()
+        circles = svg.append('g')
+          .classed('nodes', true)
+          .selectAll()
           .data(nodes)
           .enter()
           .append('g')
-          .classed('nodes', true)
           .append('circle')
           .attr('r', function (d, i) {
             let r = linksCount[d.id];

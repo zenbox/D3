@@ -1,5 +1,5 @@
 /**
- * Scripts for the Tacho Application
+ * Scripts for the Speedometer Application
  * @author Michael
  * @since 2018/11/06
  * @version 1.0.0
@@ -11,7 +11,8 @@
 
   // declaration
   let
-    socket = new WebSocket('ws://192.168.55.95:1337'),
+    ipAddress = '192.168.188.30',
+    socket = new WebSocket('ws://' + ipAddress + ':1337'),
     needle = document.querySelector('#needle');
 
   // methods

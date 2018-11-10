@@ -20,13 +20,23 @@
   const socket = new socketServer({
     httpServer: httpServer
   });
+  const dns = require('dns');
 
   // starting the webservice
   httpServer.listen(port);
+
   console.log('- - - - - - - - - - - - - - - - - - - - -');
   console.log('a http server runs on port ' + port + ',');
   console.log('press strg-c to stop it.');
   console.log('- - - - - - - - - - - - - - - - - - - - -');
+
+  // gives the local ipAddress
+  dns.lookup(require('os')
+    .hostname(),
+    function (err, add, fam) {
+      console.log('local ip: ' + add);
+      console.log('- - - - - - - - - - - - - - - - - - - - -');
+    })
 
   // socket eventlistener for initial request
   socket.on('request', function (request) {

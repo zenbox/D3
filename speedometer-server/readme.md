@@ -13,7 +13,4 @@ press strg-c to stop it.
 local ip: 192.168.x.x
 - - - - - - - - - - - - - - - - - - - - -
 ```
-It generates and delivers random data via a websocket service and using the port 1337. The port number must be configured in ```server.js```. The browser script uses ```javascript
-ws://192.168.x.x:1337
-```
-to connect the websocket servive and to receive the data.
+It generates and delivers random data via a websocket service and using the port 1337. The port number must be configured in ```server.js```. The browser script uses ```ws://192.168.x.x:1337``` to connect the websocket servive and to receive the data.

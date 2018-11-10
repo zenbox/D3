@@ -14,3 +14,11 @@ local ip: 192.168.x.x
 - - - - - - - - - - - - - - - - - - - - -
 ```
 It generates and delivers random data via a websocket service and using the port 1337. The port number must be configured in ```server.js```. The browser script uses ```ws://192.168.x.x:1337``` to connect the websocket servive and to receive the data.
+
+```javascript
+// declaration
+let
+  ipAddress = '192.168.x.x',
+  socket = new WebSocket('ws://' + ipAddress + ':1337'),
+  ...
+```

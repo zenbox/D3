@@ -22,3 +22,6 @@ let
   socket = new WebSocket('ws://' + ipAddress + ':1337'),
   ...
 ```
+
+## Installing The Server Script
+There is a package.json. The ```$ npm install``` command installs the required ```websocket``` library. I'm using  node ```v10.8.0```.

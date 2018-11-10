@@ -13,9 +13,7 @@
   let
     svg = undefined,
     canvas = {},
-    scale = {},
-    xScale = undefined,
-    yScale = undefined;
+    options = {};
 
   // configuration (c header style)
   canvas = {
@@ -35,27 +33,8 @@
       left: 40
     }
   };
-  scale = {
-    xAxis: {
-      domain: {
-        from: 0,
-        to: 3500000
-      },
-      range: {
-        start: canvas.padding.left,
-        end: canvas.width - canvas.padding.right
-      }
-    },
-    yAxis: {
-      domain: {
-        from: 100,
-        to: 0
-      },
-      range: {
-        start: canvas.padding.top,
-        end: canvas.height - canvas.padding.bottom
-      }
-    }
+  options = {
+    minimumSizeForNodes: 5
   };
 
   // methods
@@ -67,51 +46,23 @@
       .attr('viewbox', canvas.viewbox.x + ' ' + canvas.viewbox.y + ' ' + canvas.viewbox.width + ' ' + canvas.viewbox.height)
   }
 
-  function setXScale() {
-    xScale = d3.scaleLinear()
-      .domain([scale.xAxis.domain.from, scale.xAxis.domain.to]) // Wertebereich der Daten
-      .range([scale.xAxis.range.start, scale.xAxis.range.end]) // Zeichnungsbreite
-  }
-
-  function setYScale() {
-    yScale = d3.scaleLinear()
-      .domain([scale.yAxis.domain.from, scale.yAxis.domain.to]) // Wertebereich der Daten
-      .range([scale.yAxis.range.start, scale.yAxis.range.end]) // Zeichnungsbreite
-  }
-
-  function setXAxis() {
-    svg.append('g')
-      .attr('class', 'axis')
-      .attr('transform', 'translate(0,' + (canvas.height - canvas.padding.bottom) + ')')
-      .call(d3.axisBottom(xScale)
-        .ticks(10, 's'));
-  }
-
-  function setYAxis() {
-
-    svg.append('g')
-      .attr('class', 'axis')
-      .attr('transform', 'translate(' + (canvas.padding.left) + ', 0)')
-      .call(d3.axisLeft(yScale));
-  }
-
   function drawForceDirectionGraph(dataset) {
-
-
     d3.json(dataset)
       .then(function (dataset) {
 
+        // DECLARATION
         let
           nodes = dataset.nodes,
           links = dataset.links,
+          color = d3.scaleOrdinal(d3.schemeCategory10),
           linksBySource = undefined,
           linksCount = undefined,
           forceSimulation = undefined,
           lines = undefined,
           node = undefined,
-          group = undefined,
-          groupData = undefined;
+          group = undefined;
 
+        // METHODS
         function ticked() {
           if (lines) {
             lines
@@ -136,14 +87,37 @@
           }
         };
 
+        function dragstarted(d) {
+          if (!d3.event.active) forceSimulation.alphaTarget(0.3)
+            .restart();
+          d.fx = d.x;
+          d.fy = d.y;
+        }
+
+        function dragged(d) {
+          d.fx = d3.event.x;
+          d.fy = d3.event.y;
+        }
+
+        function dragended(d) {
+          if (!d3.event.active) forceSimulation.alphaTarget(0);
+          d.fx = null;
+          d.fy = null;
+        }
+
+        //CONTROL
+        // - - - - - - - - - -
         // sorting or nesting data
+        // - - - - - - - - - -
         linksBySource = d3.nest()
           .key(function (d, i) {
             return d.source;
           })
           .entries(links);
 
+        // - - - - - - - - - -
         // sorting and count links per name and save as object
+        // - - - - - - - - - -
         linksCount = d3.nest()
           .key(function (d, i) {
             return d.source;
@@ -152,19 +126,25 @@
             return v.length;
           })
           .object(links);
+        // - - - - - - - - - -
 
+        // - - - - - - - - - -
         // configure a force direction layout
+        // - - - - - - - - - -
         forceSimulation = d3.forceSimulation()
           .force('link', d3.forceLink()
             // build links between node-id's
             .id(function (d, i) {
               return d.id;
-            }))
+            })
+            .distance(10)
+          )
           // use many (separate) bodies
           .force('charge', d3.forceManyBody()
             .strength(-100))
           // use the canvas center
           .force('center', d3.forceCenter(canvas.width / 2, canvas.height / 2))
+        // - - - - - - - - - -
 
         // - - - - - - - - - -
         // graphics and svg
@@ -189,10 +169,16 @@
           .append('circle')
           .attr('r', function (d, i) {
             let r = linksCount[d.id];
-            r = r + 5;
+            r = r + options.minimumSizeForNodes;
             return r;
-          });
-
+          })
+          .attr('style', function (d) {
+            return 'fill:' + color(d.group);
+          })
+          .call(d3.drag()
+            .on('start', dragstarted)
+            .on('drag', dragged)
+            .on('end', dragended));;
         // - - - - - - - - - -
 
         // - - - - - - - - - -
@@ -213,13 +199,6 @@
 
   // control
   setCanvas(canvas.context);
-
-  setXScale();
-  setYScale();
-
-  // setXAxis();
-  // setYAxis();
-
   drawForceDirectionGraph('assets/data/miserables.json');
   // - - - - - - - - - -
 }())
